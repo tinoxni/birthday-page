@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            background-color: #ffebf0;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #ff69b4;
+            font-size: 3em;
+            margin-top: 30px;
+            animation: colorchange 4s infinite;
+        }
+        @keyframes colorchange {
+            0% {color: #ff69b4;}
+            50% {color: #ff1493;}
+            100% {color: #ff69b4;}
+        }
+        p {
+            font-size: 1.5em;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background-color: #ff1493;
+            border: none;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        button:hover {
+            background-color: #ff69b4;
+        }
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: pink;
+            top: 0;
+            left: 50%;
+            animation: fall 5s infinite;
+        }
+        @keyframes fall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        .heart {
+            width: 150px;
+            height: 150px;
+            background-color: #ff1493;
+            position: relative;
+            margin: 20px auto;
+            transform: rotate(-45deg);
+        }
+        .heart:before,
+        .heart:after {
+            content: "";
+            width: 150px;
+            height: 150px;
+            background-color: #ff1493;
+            border-radius: 50%;
+            position: absolute;
+        }
+        .heart:before {
+            top: -75px;
+            left: 0;
+        }
+        .heart:after {
+            left: 75px;
+            top: 0;
+        }
+        .balloons {
+            margin-top: 20px;
+        }
+        .balloon {
+            width: 60px;
+            height: 100px;
+            background-color: #ff69b4;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            position: relative;
+            display: inline-block;
+            margin: 0 10px;
+        }
+        .balloon:before {
+            content: "";
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            width: 2px;
+            height: 30px;
+            background-color: #888;
+        }
+        .balloon:nth-child(2) {
+            background-color: #ffb6c1;
+        }
+        .balloon:nth-child(3) {
+            background-color: #ff1493;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Happy Birthday, my Putheany!</h1>
+    
+    <div class="heart"></div>
+
+    <p>Click the button below for a fun surprise!</p>
+
+    <div class="balloons">
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+    </div>
+
+    <button onclick="redirectToWish()">Click Me!</button>
+
+    <div id="confettiContainer"></div>
+
+    <script>
+        function redirectToWish() {
+            window.location.href = "wish_updated.html"; // Link to the second page (wish_updated.html)
+        }
+    </script>
+
+</body>
+</html>
